@@ -15,9 +15,16 @@ class NavBarGeneric extends React.Component {
       routes : [],
       current_route : {},
       rightChildren: null,
+      bgColor: "#24B0CC",
     }
   }
 
+
+
+
+  setBackgroundColor(color) {
+    this.setState({bgColor: color})
+  }
 
 
 
@@ -31,21 +38,25 @@ class NavBarGeneric extends React.Component {
 
   render() {
     return (
-        <View style={[styles.container, this.props.style]}>
-          {
-            this.props.title ? (
-                <Text style={styles.title}>{this.props.title}</Text>
-            ) : (
-                <Image style={[styles.title_icon, {height: 24}]} source={require('image!icon_header')} />
-            )
-          }
+        <View style={[styles.container, this.props.style, {backgroundColor: this.state.bgColor}]}>
           {
             this.props.routes.length > 1 ? (
                 <View style={styles.left}>
                   <TouchableHighlight underlayColor='transparent' onPress={() => { this.props.navigationView.pop() }}>
-                    <Image style={styles.icon} source={require('image!icon_back')} />
+                    <Image style={styles.icon} source={GLOBAL.IMAGE.icon_back} />
                   </TouchableHighlight>
                 </View>
+            ) : (
+                <View style={styles.left}>
+                  <TouchableHighlight underlayColor='transparent' onPress={() => { this.props.navigationView.pop() }}>
+                    <Image style={styles.icon} source={GLOBAL.IMAGE.icon_menu} />
+                  </TouchableHighlight>
+                </View>
+            )
+          }
+          {
+            this.props.title ? (
+                <Text style={styles.title}>{this.props.title}</Text>
             ) : null
           }
           {this.state.rightChildren}
@@ -64,31 +75,30 @@ var styles = React.StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     top: 0,
-    backgroundColor: 'rgb(41,117,202)'
   },
   title: {
     flex: 1,
-    fontSize: 20,
+    fontSize: 18,
     position: 'relative',
     color: "#FFFFFF",
     alignItems: 'stretch',
-    textAlign: 'center',
+    textAlign: 'left',
   },
   title_icon: {
     flex: 1,
     resizeMode: 'contain',
   },
   left: {
-    position: 'absolute',
+    position: 'relative',
     left: 4,
-    top: 20,
     bottom: 0,
     alignSelf: 'center',
     alignItems: 'flex-start',
   },
   icon: {
-    width: 40,
-    height: 40,
+    margin: 8,
+    width: 32,
+    height: 32,
     resizeMode: 'contain',
   },
 });

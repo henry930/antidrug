@@ -17,7 +17,6 @@ class AppDelegate extends React.Component {
     super(props);
     this.state = {
       index : 0,
-      bottomBarIsVisible : true,
       isStarted: false,
       isReady: false,
       isPageTest: true,
@@ -109,8 +108,20 @@ class AppDelegate extends React.Component {
 
     nav.setNavbarType(null);
 
-    if (curRouteName == "AppDashboardPage") {
-      nav.setTitle("");
+    if (curRouteName == "IntroPage") {
+      nav.setNavbarType('hide');
+    }
+    else if (curRouteName == "QuizBeginPage") {
+      nav.setTitle('「理．不理」測試');
+      nav.getBar().refs.generic.setBackgroundColor("#24B0CC");
+    }
+    else if (curRouteName == "QuizPage") {
+      nav.setTitle(' ');
+      nav.getBar().refs.generic.setBackgroundColor("#24B0CC");
+    }
+    else if (curRouteName == "QuizResultPage") {
+      nav.setTitle('分析結果');
+      nav.getBar().refs.generic.setBackgroundColor("#24B0CC");
     }
 
     else {

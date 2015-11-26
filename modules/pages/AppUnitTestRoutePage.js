@@ -7,6 +7,8 @@ var {
 var CoreNavigationView = require('../core/CoreNavigationView');
 var NavBar = require('../component/NavBar.js');
 
+var IntroPage = require('./intro/IntroPage');
+
 class AppUnitTestRoutePage extends React.Component {
 
   constructor(props) {
@@ -27,8 +29,8 @@ class AppUnitTestRoutePage extends React.Component {
     })
 
     requestAnimationFrame(() => {
-      this.handleFocus({data: {route: {page: AppDashboardPage, name: "AppDashboardPage", data: {}}}}, this.refs.nav);
-      this.props.handleFocus({data: {route: {page: AppDashboardPage, name: "AppDashboardPage", data: {}}}}, this.refs.nav);
+      this.handleFocus({data: {route: {page: IntroPage, name: "IntroPage", data: {}}}}, this.refs.nav);
+      this.props.handleFocus({data: {route: {page: IntroPage, name: "IntroPage", data: {}}}}, this.refs.nav);
     })
   }
 
@@ -43,11 +45,14 @@ class AppUnitTestRoutePage extends React.Component {
         <View style={{flex: 1}}>
           <CoreNavigationView
               ref="nav"
-              initialPage={"AppDashboardPage"}
+              initialPage={"IntroPage"}
               initialData={{}}
               navigationBar={this.state.NavBarRef}
               routeDictionary={{
-                AppDashboardPage: require('./AppDashboardPage'),
+                IntroPage: require('./intro/IntroPage'),
+                QuizBeginPage: require('./quiz/QuizBeginPage'),
+                QuizPage: require('./quiz/QuizPage'),
+                QuizResultPage: require('./quiz/QuizResultPage'),
               }}
               />
         </View>

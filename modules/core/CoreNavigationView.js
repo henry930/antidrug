@@ -154,6 +154,10 @@ class CoreNavigationView extends React.Component {
   }
 
 
+  getBar() {
+    return this.refs.nav._navBar;
+  }
+
 
 
   // RENDER INTERNAL
@@ -171,7 +175,7 @@ class CoreNavigationView extends React.Component {
       pageCount: this.pageCount.bind(this),
       setTitle: this.setTitle.bind(this),
       setNavBarType: this.setNavbarType.bind(this),
-      getBar: (function() { return this.refs.nav._navBar }).bind(this),
+      getBar: this.getBar.bind(this),
     }
   }
 

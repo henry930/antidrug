@@ -27,7 +27,7 @@ class NavBar extends React.Component {
     if (this.state.navbarType === 'hide') {
       return 20;
     }
-    return 60;
+    return 80;
   }
 
   componentDidMount() {

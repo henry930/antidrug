@@ -7,6 +7,7 @@
 var React = require('react-native');
 var Constants = require('./modules/constants/Constants.js');
 var Dummies = require('./modules/dummies/Dummies.js');
+var Images = require('./modules/images/Images.js');
 var AppDelegate = require('./modules/AppDelegate.js');
 var {
     AppRegistry,
@@ -19,6 +20,7 @@ class AntiDrug extends React.Component {
     super(props);
     new Constants().Make('sim', 'aos', 'dev');
     new Dummies().Make('sim', 'aos', 'dev');
+    new Images().Make('sim', 'aos', 'dev');
   }
 
   componentDidMount() {

@@ -10,7 +10,7 @@ class NavBar extends _NavBar {
     if (this.state.navbarType === 'hide') {
       return 20;
     }
-    return 60;
+    return 80;
   }
 
 }

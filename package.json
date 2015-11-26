@@ -19,7 +19,9 @@
     "react-native-htmlview": "^0.2.0",
     "react-native-refresh-infinite-listview": "^1.0.2",
     "react-native-router-flux": "^0.3.4",
+    "react-native-side-menu": "^0.15.5",
     "react-native-viewpager": "^0.1.4",
-    "react-router": "^1.0.0"
+    "react-router": "^1.0.0",
+    "rebound": "0.0.13"
   }
 }

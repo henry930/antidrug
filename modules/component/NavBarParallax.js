@@ -108,15 +108,13 @@ class NavBarParallax extends React.Component {
           {
             this.props.title ? (
                 <Text style={[styles.title, this.parallaxForegroundStyle() ]}>{this.props.title}</Text>
-            ) : (
-                <Image style={[styles.title_icon, {height: 24}, this.parallaxForegroundStyle() ]} source={require('image!icon_header')} />
-            )
+            ) : null
           }
           {
             this.props.routes.length > 1 ? (
                 <View style={styles.left}>
                   <TouchableHighlight underlayColor='transparent' onPress={() => { this.props.navigationView.pop() }}>
-                    <Image style={styles.icon} source={require('image!icon_back')} />
+                    <Image style={styles.icon} source={GLOBAL.IMAGE.icon_back} />
                   </TouchableHighlight>
                 </View>
             ) : null
