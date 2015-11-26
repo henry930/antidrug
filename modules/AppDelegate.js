@@ -7,9 +7,12 @@ var {
 
 var styles = require('./styles/styles.js');
 
+var SideMenu = require('react-native-side-menu');
+
 var AppSplashPage = require('./pages/AppSplashPage');
 var AppMainRoutePage = require('./pages/AppMainRoutePage');
 var AppUnitTestRoutePage = require('./pages/AppUnitTestRoutePage');
+var AppMenu = require('./pages/AppMenu');
 
 class AppDelegate extends React.Component {
 
@@ -75,9 +78,15 @@ class AppDelegate extends React.Component {
 
     if (this.state.isPageTest) {
       return (
-          <View style={{flex: 1}}>
-            <AppUnitTestRoutePage handleFocus={this.handleFocus.bind(this)} />
-          </View>
+          <SideMenu
+              menu={<AppMenu />}
+              touchToClose={this.state.touchToCloseMenu}
+              menuPosition='left'
+              onChange={()=>{}}>
+            <View style={{flex: 1}}>
+              <AppUnitTestRoutePage handleFocus={this.handleFocus.bind(this)} />
+            </View>
+          </SideMenu>
       )
     }
 

@@ -9,6 +9,7 @@ class Images {
       icon2 : require('./img/icon2.png'),
       icon3 : require('./img/icon3.png'),
       icon4 : require('./img/icon4.png'),
+      icon5 : require('./img/icon5.png'),
       icon6 : require('./img/icon6.png'),
       icon_back : require('./img/icon_back.png'),
       icon_menu : require('./img/icon_menu.png'),
