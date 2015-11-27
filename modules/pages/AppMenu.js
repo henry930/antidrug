@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = class Menu extends Component {
+class Menu extends Component {
 
   constructor(props) {
     super(props)
@@ -83,6 +83,13 @@ module.exports = class Menu extends Component {
     }
   }
 
+
+  onClickItem(id) {
+    if (this.props.onClickItem) {
+      this.props.onClickItem(id);
+      this.context.menuActions.close();
+    }
+  }
 
   render() {
     return (
@@ -97,32 +104,38 @@ module.exports = class Menu extends Component {
                   source={GLOBAL.IMAGE.icon}/>
             </View>
 
-            <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+            <TouchableOpacity onPress={() => {this.onClickItem('QuizBeginPage')}}
+                              style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
               <Image style={styles.item_icon} source={GLOBAL.IMAGE.icon1} />
               <Text style={styles.item}>「理．不理」測試</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+            <TouchableOpacity onPress={() => {this.onClickItem('QuizBeginPage')}}
+                              style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
               <Image style={styles.item_icon} source={GLOBAL.IMAGE.icon2} />
               <Text style={styles.item}>相處十式</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+            <TouchableOpacity onPress={() => {this.onClickItem('QuizBeginPage')}}
+                              style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
               <Image style={styles.item_icon} source={GLOBAL.IMAGE.icon3} />
               <Text style={styles.item}>迷思</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+            <TouchableOpacity onPress={() => {this.onClickItem('QuizBeginPage')}}
+                              style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
               <Image style={styles.item_icon} source={GLOBAL.IMAGE.icon4} />
               <Text style={styles.item}>我的支援</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+            <TouchableOpacity onPress={() => {this.onClickItem('AboutPage')}}
+                              style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
               <Image style={styles.item_icon} source={GLOBAL.IMAGE.icon5} />
               <Text style={styles.item}>關於我們</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+            <TouchableOpacity onPress={() => {this.onClickItem('QuizBeginPage')}}
+                              style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
               <Image style={styles.item_icon} source={GLOBAL.IMAGE.icon6} />
               <Text style={styles.item}>其他Apps</Text>
             </TouchableOpacity>
@@ -132,3 +145,10 @@ module.exports = class Menu extends Component {
     );
   }
 }
+
+Menu.contextTypes = {
+  menuActions: React.PropTypes.object.isRequired
+};
+
+
+module.exports = Menu;

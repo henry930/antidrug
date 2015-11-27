@@ -79,12 +79,12 @@ class AppDelegate extends React.Component {
     if (this.state.isPageTest) {
       return (
           <SideMenu
-              menu={<AppMenu />}
+              menu={<AppMenu onClickItem={this.handleMenuOnClick.bind(this) } />}
               touchToClose={this.state.touchToCloseMenu}
               menuPosition='left'
               onChange={()=>{}}>
             <View style={{flex: 1}}>
-              <AppUnitTestRoutePage handleFocus={this.handleFocus.bind(this)} />
+              <AppUnitTestRoutePage ref='route' handleFocus={this.handleFocus.bind(this)} />
             </View>
           </SideMenu>
       )
@@ -99,12 +99,20 @@ class AppDelegate extends React.Component {
           }
           {
             this.state.isStarted ? (
-                <AppMainRoutePage handleFocus={this.handleFocus.bind(this)} />
+                <AppMainRoutePage ref='route' handleFocus={this.handleFocus.bind(this)} />
             ) : null
           }
         </View>
 
     );
+  }
+
+
+
+  handleMenuOnClick(id) {
+    if (this.refs.route) {
+      this.refs.route.triggerGoToPage(id)
+    }
   }
 
 
@@ -131,6 +139,10 @@ class AppDelegate extends React.Component {
     else if (curRouteName == "QuizResultPage") {
       nav.setTitle('分析結果');
       nav.getBar().refs.generic.setBackgroundColor("#24B0CC");
+    }
+    else if (curRouteName == "AboutPage") {
+      nav.setTitle('關於我們');
+      nav.getBar().refs.generic.setBackgroundColor("#A9A9A9");
     }
 
     else {

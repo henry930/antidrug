@@ -40,6 +40,11 @@ class AppUnitTestRoutePage extends React.Component {
   }
 
 
+  triggerGoToPage(id) {
+    this.refs.nav.resetTo(id)
+  }
+
+
   render() {
     return (
         <View style={{flex: 1}}>
@@ -53,6 +58,7 @@ class AppUnitTestRoutePage extends React.Component {
                 QuizBeginPage: require('./quiz/QuizBeginPage'),
                 QuizPage: require('./quiz/QuizPage'),
                 QuizResultPage: require('./quiz/QuizResultPage'),
+                AboutPage: require('./about/AboutPage'),
               }}
               />
         </View>

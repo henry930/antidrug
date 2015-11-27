@@ -119,6 +119,31 @@ var styles = StyleSheet.create({
   },
 
 
+
+
+
+  about_text_header: {
+    textAlign: 'left',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 25,
+    paddingBottom: 25,
+    fontSize: 20,
+    lineHeight: 28,
+    fontWeight: '200',
+    color: "#000000",
+  },
+  about_text_desc: {
+    paddingLeft: 15,
+    paddingRight: 15,
+    lineHeight: 20,
+    textAlign: 'left',
+    fontSize: 16,
+    fontWeight: '200',
+    color: "#1A1A1A"
+  },
+
+
 });
 
 module.exports = styles;
