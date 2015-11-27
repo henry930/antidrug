@@ -116,7 +116,7 @@ class Menu extends Component {
               <Text style={styles.item}>相處十式</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {this.onClickItem('QuizBeginPage')}}
+            <TouchableOpacity onPress={() => {this.onClickItem('QaPage')}}
                               style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
               <Image style={styles.item_icon} source={GLOBAL.IMAGE.icon3} />
               <Text style={styles.item}>迷思</Text>

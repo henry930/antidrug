@@ -100,6 +100,15 @@ var styles = StyleSheet.create({
     paddingBottom: 16,
     backgroundColor: "#EEAB1F",
   },
+
+  button_purple: {
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingTop: 16,
+    paddingBottom: 16,
+    backgroundColor: "#E93580",
+  },
+
   button_shadow: {
     borderRadius: 10,
     shadowColor: "#000000",
@@ -142,6 +151,64 @@ var styles = StyleSheet.create({
     fontWeight: '200',
     color: "#1A1A1A"
   },
+
+
+
+
+
+  qacard: {
+    backgroundColor: "#ffffff",
+    borderRadius: 2,
+    borderWidth: 1,
+    borderColor: "#ffffff",
+    overflow: 'hidden',
+  },
+  qacard_shadow: {
+    marginLeft: 8,
+    marginRight: 8,
+    marginTop: 6,
+    marginBottom: 6,
+    borderRadius: 2,
+    shadowColor: "#000000",
+    shadowOpacity: 0.35,
+    shadowRadius: 4,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
+  },
+
+
+  qacard_text_header: {
+    textAlign: 'left',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 20,
+    paddingBottom: 20,
+    fontSize: 18,
+    lineHeight: 25,
+    fontWeight: '200',
+    color: "#E93580",
+  },
+  qacard_text_desc: {
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 20,
+    lineHeight: 20,
+    textAlign: 'left',
+    fontSize: 16,
+    fontWeight: '200',
+    color: "#1A1A1A"
+  },
+
+  qacard_text_button: {
+    textAlign: 'center',
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: '200',
+  },
+
+
 
 
 });

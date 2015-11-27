@@ -144,7 +144,10 @@ class AppDelegate extends React.Component {
       nav.setTitle('關於我們');
       nav.getBar().refs.generic.setBackgroundColor("#A9A9A9");
     }
-
+    else if (curRouteName == "QaPage") {
+      nav.setTitle('迷思');
+      nav.getBar().refs.generic.setBackgroundColor("#E93580");
+    }
     else {
       nav.setTitle(curRoute.data.title);
     }

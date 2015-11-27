@@ -4,7 +4,7 @@ var {
     Text,
     View,
     Image,
-    TouchableHighlight,
+    TouchableOpacity,
     } = React;
 
 class NavBarGeneric extends React.Component {
@@ -42,15 +42,15 @@ class NavBarGeneric extends React.Component {
           {
             this.props.routes.length > 1 ? (
                 <View style={styles.left}>
-                  <TouchableHighlight underlayColor='transparent' onPress={() => { this.props.navigationView.pop() }}>
+                  <TouchableOpacity onPress={() => { this.props.navigationView.pop() }}>
                     <Image style={styles.icon} source={GLOBAL.IMAGE.icon_back} />
-                  </TouchableHighlight>
+                  </TouchableOpacity>
                 </View>
             ) : (
                 <View style={styles.left}>
-                  <TouchableHighlight underlayColor='transparent' onPress={() => { this.props.navigationView.pop() }}>
+                  <TouchableOpacity onPress={() => { this.context.menuActions.toggle(); }}>
                     <Image style={styles.icon} source={GLOBAL.IMAGE.icon_menu} />
-                  </TouchableHighlight>
+                  </TouchableOpacity>
                 </View>
             )
           }
@@ -102,6 +102,11 @@ var styles = React.StyleSheet.create({
     resizeMode: 'contain',
   },
 });
+
+
+NavBarGeneric.contextTypes = {
+  menuActions: React.PropTypes.object.isRequired
+};
 
 
 module.exports = NavBarGeneric;

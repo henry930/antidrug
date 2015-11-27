@@ -59,6 +59,7 @@ class AppUnitTestRoutePage extends React.Component {
                 QuizPage: require('./quiz/QuizPage'),
                 QuizResultPage: require('./quiz/QuizResultPage'),
                 AboutPage: require('./about/AboutPage'),
+                QaPage: require('./qa/QaPage'),
               }}
               />
         </View>
